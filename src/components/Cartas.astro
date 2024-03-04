@@ -1,0 +1,60 @@
+---
+
+const PLATOSDERECHA = [{
+	name: 'Platos Elaborados',
+	img: 'elaborado2.jpeg'
+},{
+	name: 'Pastas',
+	img: 'pasta2.jpeg'
+},{
+	name: 'Pizzas',
+	img: 'pizza2.jpeg'
+}]
+
+const PLATOSIZQUIERDA = [{
+	name: 'Minutas',
+	img: 'milanesa2.jpeg'
+},{
+	name: 'Hamburguesas',
+	img: 'hamburguesa.webp'
+},{
+	name: 'Ensaladas',
+	img: 'ensalada.webp'
+}]
+---
+<div class="mt-4">
+	<div class="text-2xl w-[100%] md:grid md:grid-cols-2">
+		<div class="">
+		{PLATOSDERECHA.map( plato =>(
+			<div class="md:w-[85%] text-center font-thin font-mono"> 
+				<p class="text-4xl mt-14">
+					{plato.name}
+					<div class="mt-5  w-[75vw] md:w-[25vw] ml-[10%] md:ml-[18%] h-3 bg-gradient-to-r from-[#800000] to-[#2d0000]"></div>	
+				</p>	
+				<div class="flex justify-center">
+					<img class="rounded-xl shadow-2xl mt-10 w-[75%] h-[350px] md:w-[520px]" src={plato.img} />
+				</div>
+			</div>
+		))}
+		</div>
+		<div class="md:mt-32">
+			{PLATOSIZQUIERDA.map( plato =>(
+				<div class="md:w-[85%] md:ml-[10%] text-center font-thin font-mono"> 
+					<p class="text-4xl mt-14">
+						{plato.name}
+						<div class="mt-5  w-[75vw] md:w-[25vw] ml-[10%] md:ml-[18%] h-3 bg-gradient-to-r from-[#800000] to-[#2d0000]"></div>	
+						</p>	
+						<div class="flex justify-center">
+							<img class="rounded-xl shadow-2xl mt-10 w-[75%] h-[350px] md:w-[520px]" src={plato.img} />
+						</div>
+				</div>
+			))}
+		</div>
+	</div>
+</div>
+
+<style>
+	h1{
+		font-family: 'Garamond' ;
+	}
+</style>

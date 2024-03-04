@@ -1,0 +1,72 @@
+---
+import Header from '../components/Header.astro'
+import Footer from '../components/Footer.astro'
+
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+
+
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Astro description" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+	</head>
+	<body>
+		<Header />
+		<slot />
+		<Footer />
+	</body>
+</html>
+<style is:global>
+	html {
+		font-family: system-ui, sans-serif;
+		display: flex;
+		flex-direction: column;
+		scroll-behavior: smooth;
+		background-color: black;
+	}
+	@keyframes show{
+        from{
+            opacity: 0;
+            scale: 25%;
+        }
+
+        to{
+            opacity: 0.85;
+            scale:100%
+        }
+    }
+
+    img{
+        view-timeline-name: --image;
+        view-timeline-axis: block;
+
+        animation-timeline: --image;
+        animation-name: show ;
+
+        animation-range: entry 25% cover 30%;
+        animation-fill-mode: both;
+    }
+	@font-face {
+		font-family: 'Garamond';
+		src: url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap');
+		font-weight: normal;
+		font-style: normal;
+		font-display: swap;
+	}
+	@media (prefers-reduced-motion: reduce){
+		html{
+			scroll-behavior: auto;
+		}
+	}
+</style>

@@ -1,0 +1,43 @@
+---
+import 'animate.css'
+
+import SocialPill from '../components/SocialPill.astro';
+
+import Email from '../components/Icons/Email.astro';
+import Facebook from '../components/Icons/Facebook.astro';
+import Instagram from '../components/Icons/Instagram.astro';
+import Phone from '../components/Icons/Phone.astro';
+---
+<div class="text-center mb-20 animate__animated animate__bounceInUp ">
+        <h1 class=" text-9xl ">Termoli</h1>
+        <h4 class="font-serif text-2xl mt-3 ml-2 text-[#ffffffaa]">~ El lugar donde todos pasan ~</h4>
+        <h5 class="mt-2 text-[#ffffffaa]">Irigoyen 371, Punta Alta.</h5>
+        <h5 class="mt-12">Nuestras redes sociales</h5>
+        <nav class="flex justify-center gap-3 mt-3 flex-wrap items-center mx-12">
+            <SocialPill href="https://www.facebook.com/termolicafe">
+                <Facebook class="size-5 md:size-6 "  />
+                Facebook
+            </SocialPill>
+            <SocialPill href="https://www.instagram.com/termolicafe/">
+                <Instagram class="size-5 md:size-6 "/>
+                Instagram
+            </SocialPill>
+        </nav>
+        <h5 class="mt-5 mb-3">Contactos</h5>
+        <nav class="flex justify-center gap-3 flex-wrap items-center mx-12">
+            <SocialPill href="mailto:gsilvente@hotmail.com">
+                 <Email class="size-5 md:size-6 "  />
+                gsilvente@hotmail.com
+            </SocialPill>
+            <SocialPill href="tel:+5492932506131">
+                <Phone class="size-5 md:size-6 "  />
+                2932506131
+            </SocialPill>
+        </nav>
+
+</div>
+<style>
+	h1{
+		font-family: 'Garamond';
+	}
+</style>

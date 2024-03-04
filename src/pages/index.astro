@@ -1,0 +1,55 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SectionContainer from '../components/SectionContainer.astro';
+import Cartas from '../components/Cartas.astro';
+import MenuEjecutivo from '../components/MenuEjecutivo.astro';
+import Main from '../components/Main.astro';
+import Carta from '../components/Carta.astro';
+
+---
+
+<Layout title="Welcome to Astro.">
+	<main id="top">
+		<article class="px-4 mt-12 text-white">
+			<Main />
+		</article>
+		<div>
+			<SectionContainer id="platos" class="px-4 text-white ">
+				<Cartas />
+			</SectionContainer>
+		</div>	
+		<section>
+			<SectionContainer id="carta" class="px-4 text-white text-center">
+				<Carta />
+			</SectionContainer>
+			<div
+				class="w-full"
+				style={{
+					backgroundImage: `url(/home-bg.png)`,
+					backgroundRepeat: "no-repeat",
+					backgroundPosition: "left top, right center, left bottom",
+					backgroundSize: "105vw 45rem",
+				}}
+				>
+				<SectionContainer id="carta" class="px-4 text-white text-center">
+					<MenuEjecutivo />
+				</SectionContainer>
+			</div>
+		</section>
+	</main>
+</Layout>
+<style>
+	article{
+		background-image: url('/salonFondo.jpg');
+		background-repeat: no-repeat;
+		background-size:cover;
+	}
+	section{
+        background: rgb(69,0,0);
+background: linear-gradient(180deg, rgb(69, 0, 0) 0%, rgba(0,0,0,1) 100%);
+    }
+	div{
+		background: rgb(0,0,0);
+background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(69,0,0,1) 100%);
+	}
+</style>
